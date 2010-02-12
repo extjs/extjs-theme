@@ -30,7 +30,7 @@ module ExtJS
             puts " - css2sass #{m.captures[0]}.css -> #{sass_file}"
             sass_files << "@import #{subdir}/#{m.captures[0]}.sass"
             `css2sass #{file} #{sass_file}`
-            
+            write_sass_vars(sass_file)
           end
         end
 
