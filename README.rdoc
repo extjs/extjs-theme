@@ -10,6 +10,8 @@ In the root of your Rails app, first execute the following:
 
 $ xtheme init <path/to/ext> <path/to/stylesheets>
 
+This creates a config file named .xthemeconfig in the application root.
+
 Example
 
 $ xtheme init public/javascripts/ext-3.1.0 public/stylesheets
