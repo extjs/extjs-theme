@@ -29,18 +29,7 @@ module ExtJS::XTheme::Command
     end
 	  
 		def list
-			list = heroku.list
-			if list.size > 0
-				display list.map {|name, owner|
-					if heroku.user == owner
-						name
-					else
-						"#{name.ljust(25)} #{owner}"
-					end
-				}.join("\n")
-			else
-				display "You have no apps."
-			end
+			display "Not implemented"
 		end
 
 		def create
@@ -54,25 +43,7 @@ module ExtJS::XTheme::Command
 		end
 
 		def destroy
-			if name = extract_option('--app')
-				info = heroku.info(name)
-				url  = info[:domain_name] || "http://#{info[:name]}.#{heroku.host}/"
-				conf = nil
-
-				display("Permanently destroy #{url} (y/n)? ", false)
-				if ask.downcase == 'y'
-					heroku.destroy(name)
-					if remotes = git_remotes(Dir.pwd)
-						remotes.each do |remote_name, remote_app|
-							next if name != remote_app
-							shell "git remote rm #{remote_name}"
-						end
-					end
-					display "Destroyed #{name}"
-				end
-			else
-				display "Set the app you want to destroy adding --app <app name> to this command"
-			end
+			display "Not implemented"
 		end
 	end
 end
