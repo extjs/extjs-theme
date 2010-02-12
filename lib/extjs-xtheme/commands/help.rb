@@ -31,19 +31,19 @@ module ExtJS::XTheme::Command
 		def self.create_default_groups!
 			group('General Commands') do
 				command 'help',                         'show this usage'
-				command 'version',                      'show the gem version'
+				#command 'version',                      'show the gem version'
 				space
-				command 'list',                         'list your themes'
+				#command 'list',                         'list your themes'
 				command 'create [<name>]',              'create a new theme'
 				space
-				command 'config',                       'display the theme\'s config vars (environment)'
-				command 'config:add key=val [...]',     'add one or more config vars'
-				space
-				command 'destroy [<name>]',             'destroy a theme permanently'
+				#command 'config',                       'display the theme\'s config vars (environment)'
+				#command 'config:add key=val [...]',     'add one or more config vars'
+				#space
+				#command 'destroy [<name>]',             'destroy a theme permanently'
 			end
 
 			group('Effects') do
-				command 'modulate [<theme> <hue> <saturation> <lightness>]', 'Apply hue, saturation, lightness to a themes\'s images'
+				#command 'modulate [<theme> <hue> <saturation> <lightness>]', 'Apply hue, saturation, lightness to a themes\'s images'
 			end
 		end
 

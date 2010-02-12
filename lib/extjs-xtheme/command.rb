@@ -31,14 +31,16 @@ module ExtJS::XTheme
 			  
 				klass, method = parse(command)
 				
-				unless config || method == "init"
-				  raise ConfigNotFound.new("Could not locate config file .xthemeconfig.\nAre you in your application root?  Have you run xtheme init?")
-				end
-				unless File.exists?(config[:ext_dir])
-				  raise InvalidConfig.new("Could not locate ext_dir #{config[:ext_dir]}.\nAre you in your application root?")
-				end
-				unless File.exists?(config[:theme_dir])
-				  raise InvalidConig.new("Could not locate theme_dir #{config[:theme_dir]}.\nAre you in your application root?")
+				unless method == "init"
+				  unless config 
+				    raise ConfigNotFound.new("Could not locate config file .xthemeconfig.\nAre you in your application root?  Have you run xtheme init?")
+  				end
+				  unless config && File.exists?(config[:ext_dir])
+  				  raise InvalidConfig.new("Could not locate ext_dir #{config[:ext_dir]}.\nAre you in your application root?")
+  				end
+  				unless config && File.exists?(config[:theme_dir])
+  				  raise InvalidConig.new("Could not locate theme_dir #{config[:theme_dir]}.\nAre you in your application root?")
+				  end
 				end
 				
 				runner = klass.new(args, config)

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Christocracy"]
   s.date = %q{2010-02-12}
   s.default_executable = %q{xtheme}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Generates Sass-based Ext themes.  Includes methods for colorizing themes.}
   s.email = %q{christocracy@gmail.com}
   s.executables = ["xtheme"]
   s.extra_rdoc_files = [
@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Ext theme-generator and colorizer}
   s.test_files = [
     "test/extjs-xtheme_test.rb",
      "test/test_helper.rb"

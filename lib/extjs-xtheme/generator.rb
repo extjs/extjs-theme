@@ -14,9 +14,8 @@ module ExtJS
         # Create theme directory in /stylesheets/sass
         FileUtils.mkdir_p ["#{theme_path}/visual", "#{theme_path}/structure"]
 
-        # Create the defines.sass file, set img_path variable.
-        
-        FileUtils.copy("lib/extjs-xtheme/template/defines.sass", "#{theme_path}/defines.sass")  
+        # Create the defines.sass file, set img_path variable.          
+        FileUtils.copy("#{File.dirname(__FILE__)}/template/defines.sass", "#{theme_path}defines.sass")  
         defines = File.read("#{theme_path}/defines.sass")
         File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/\{\{img_path\}\}/, "../sass/#{name}/images") }
         puts " - created #{theme_path}/defines.sass"

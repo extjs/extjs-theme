@@ -53,8 +53,6 @@ module ExtJS::XTheme::Command
 			
 		end
 
-		
-
 		def destroy
 			if name = extract_option('--app')
 				info = heroku.info(name)
