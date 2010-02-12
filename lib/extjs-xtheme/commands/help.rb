@@ -43,7 +43,8 @@ module ExtJS::XTheme::Command
 			end
 
 			group('Effects') do
-				command 'effects:modulate [<theme> <hue> <saturation> <lightness>]', 'Apply hue, saturation, lightness to a themes\'s images'
+				command 'effects:modulate [<theme> <hue> <saturation> <lightness>]', 'Apply hue, saturation, lightness to a themes\'s images.  Specify as Floats, where 1.0 means 100%'
+				space
 			end
 		end
 
