@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
+
+require 'extjs-xtheme'
+require 'extjs-xtheme/command'
+
+args = ARGV.dup
+ARGV.clear
+command = args.shift.strip rescue 'help'
+
+ExtJS::XTheme::Command.run(command, args)
