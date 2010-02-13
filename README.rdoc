@@ -4,6 +4,12 @@ Generates a Sass version of Ext theme.  Includes methods for colorizing images.
 
 This Gem depends upon RMagick[http://gemcutter.org/gems/rmagick] and haml-edge[http://gemcutter.org/gems/haml-edge]
 
+== Installation
+	
+The Gem is hosted at Gemcutter[http://gemcutter.com].  Install the gem with:
+	
+	sudo gem install extjs-theme
+	
 == Usage
 
 In the root of your Rails app, first execute the following in your console:
