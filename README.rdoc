@@ -2,7 +2,7 @@
 
 Generates a Sass version of Ext theme.  Includes methods for colorizing images.
 
-This Gem depends upon RMagick and haml-edge.
+This Gem depends upon RMagick[http://gemcutter.org/gems/rmagick] and haml-edge[http://gemcutter.org/gems/haml-edge]
 
 == Usage
 
