@@ -1,6 +1,6 @@
 require 'launchy'
 
-module ExtJS::XTheme::Command
+module ExtJS::Theme::Command
 	class Theme < Base
 	  
 	  def init
@@ -37,7 +37,7 @@ module ExtJS::XTheme::Command
 			if !name
 			  return display "Usage: xtheme create <name>"
 			end
-			ExtJS::XTheme::Generator.create(name, @config[:ext_dir], @config[:theme_dir])
+			ExtJS::Theme::Generator.create(name, @config[:ext_dir], @config[:theme_dir])
 			display "Created #{name}"
 			
 		end

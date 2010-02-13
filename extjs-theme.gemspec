@@ -4,11 +4,11 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{extjs-xtheme}
+  s.name = %q{extjs-theme}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Christocracy"]
+  s.authors = ["Christopher Scott"]
   s.date = %q{2010-02-12}
   s.default_executable = %q{xtheme}
   s.description = %q{Generates Sass-based Ext themes.  Includes methods for colorizing themes.}
@@ -22,20 +22,21 @@ Gem::Specification.new do |s|
   s.files = [
     "Rakefile",
      "bin/xtheme",
-     "lib/extjs-xtheme.rb",
-     "lib/extjs-xtheme/command.rb",
-     "lib/extjs-xtheme/commands/base.rb",
-     "lib/extjs-xtheme/commands/conifg.rb",
-     "lib/extjs-xtheme/commands/help.rb",
-     "lib/extjs-xtheme/commands/theme.rb",
-     "lib/extjs-xtheme/dependencies.rb",
-     "lib/extjs-xtheme/effects.rb",
-     "lib/extjs-xtheme/generator.rb",
-     "lib/extjs-xtheme/template/defines.sass",
+     "lib/extjs-theme.rb",
+     "lib/extjs-theme/command.rb",
+     "lib/extjs-theme/commands/base.rb",
+     "lib/extjs-theme/commands/conifg.rb",
+     "lib/extjs-theme/commands/effects.rb",
+     "lib/extjs-theme/commands/help.rb",
+     "lib/extjs-theme/commands/theme.rb",
+     "lib/extjs-theme/dependencies.rb",
+     "lib/extjs-theme/effects.rb",
+     "lib/extjs-theme/generator.rb",
+     "lib/extjs-theme/template/defines.sass",
      "test/extjs-xtheme_test.rb",
      "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/christocracy/extjs-xtheme}
+  s.homepage = %q{http://github.com/extjs/extjs-theme}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}

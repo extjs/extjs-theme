@@ -1,6 +1,6 @@
 require 'launchy'
 
-module ExtJS::XTheme::Command
+module ExtJS::Theme::Command
 	class Effects < Base
 	  
 	  def modulate
@@ -11,7 +11,7 @@ module ExtJS::XTheme::Command
         return
 	    end
 	    display "Modulating theme images"
-	    ExtJS::XTheme::Effects.modulate(@config[:ext_dir], "#{@config[:theme_dir]}/#{@args[0]}", @args[1].to_f, @args[2].to_f, @args[3].to_f)
+	    ExtJS::Theme::Effects.modulate(@config[:ext_dir], "#{@config[:theme_dir]}/#{@args[0]}", @args[1].to_f, @args[2].to_f, @args[3].to_f)
 	  end
 	end
 end

@@ -1,4 +1,4 @@
-module ExtJS::XTheme::Command
+module ExtJS::Theme::Command
 	class Config < Base
 		def index
 			#long = args.delete('--long')

@@ -1,4 +1,4 @@
-module ExtJS::XTheme::Command
+module ExtJS::Theme::Command
 	class Help < Base
 		class HelpGroup < Array
 			attr_reader :title
@@ -53,7 +53,7 @@ module ExtJS::XTheme::Command
 		end
 
 		def version
-			#display ExtJS::XTheme.version
+			#display ExtJS::Theme.version
 		end
 
 		def usage
@@ -80,4 +80,4 @@ module ExtJS::XTheme::Command
 	end
 end
 
-ExtJS::XTheme::Command::Help.create_default_groups!
+ExtJS::Theme::Command::Help.create_default_groups!

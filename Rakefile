@@ -4,12 +4,12 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "extjs-xtheme"
+    gem.name = "extjs-theme"
     gem.summary = %Q{Ext theme-generator and colorizer}
     gem.description = %Q{Generates Sass-based Ext themes.  Includes methods for colorizing themes.}
     gem.email = "christocracy@gmail.com"
-    gem.homepage = "http://github.com/christocracy/extjs-xtheme"
-    gem.authors = ["Christocracy"]
+    gem.homepage = "http://github.com/extjs/extjs-theme"
+    gem.authors = ["Christopher Scott"]
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_dependency "rmagick"
     gem.add_dependency "haml-edge", ">=2.3"

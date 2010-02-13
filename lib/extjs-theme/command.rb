@@ -2,7 +2,7 @@ require 'commands/base'
 
 Dir["#{File.dirname(__FILE__)}/commands/*"].each { |c| require c }
 
-module ExtJS::XTheme
+module ExtJS::Theme
 	module Command
 		class InvalidCommand < RuntimeError; end
 		class CommandFailed  < RuntimeError; end
@@ -58,13 +58,13 @@ module ExtJS::XTheme
 				case parts.size
 					when 1
 						begin
-							return eval("ExtJS::XTheme::Command::#{command.capitalize}"), :index
+							return eval("ExtJS::Theme::Command::#{command.capitalize}"), :index
 						rescue NameError, NoMethodError
-						  return ExtJS::XTheme::Command::Theme, command
+						  return ExtJS::Theme::Command::Theme, command
 						end
 					when 2
 						begin
-							return ExtJS::XTheme::Command.const_get(parts[0].capitalize), parts[1]
+							return ExtJS::Theme::Command.const_get(parts[0].capitalize), parts[1]
 						rescue NameError
 							raise InvalidCommand
 						end

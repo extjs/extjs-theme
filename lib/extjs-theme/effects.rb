@@ -1,4 +1,4 @@
-module ExtJS::XTheme
+module ExtJS::Theme
   module Effects
     
     ##

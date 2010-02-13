@@ -1,5 +1,5 @@
 module ExtJS
-  module XTheme
+  module Theme
     module Generator
       ##
       # creates a new Sass theme

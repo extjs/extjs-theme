@@ -1,6 +1,6 @@
 require 'fileutils'
 
-module ExtJS::XTheme::Command
+module ExtJS::Theme::Command
 	class Base
 		#include Heroku::Helpers
 
@@ -22,7 +22,7 @@ module ExtJS::XTheme::Command
 		end
 
 		def error(msg)
-			ExtJS::XTheme::Command.error(msg)
+			ExtJS::Theme::Command.error(msg)
 		end
 
 		def ask
