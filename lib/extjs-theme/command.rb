@@ -39,7 +39,7 @@ module ExtJS::Theme
   				  raise InvalidConfig.new("Could not locate ext_dir #{config[:ext_dir]}.\nAre you in your application root?")
   				end
   				unless config && File.exists?(config[:theme_dir])
-  				  raise InvalidConig.new("Could not locate theme_dir #{config[:theme_dir]}.\nAre you in your application root?")
+  				  raise InvalidConfig.new("Could not locate theme_dir #{config[:theme_dir]}.\nAre you in your application root?")
 				  end
 				end
 				
