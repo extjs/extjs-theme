@@ -22,6 +22,8 @@ This creates a YAML config file named .xthemeconfig in the application root.
 	theme_dir: public/stylesheets/sass
 	ext_dir: public/javascripts/ext-3.1.0
 
+Every subsequent xtheme command will act up those directories.  If you download a new version of Ext, simply re-execute <code>xtheme init</code> with the new path (TODO: store in Rails <code>/config</code> dir)
+
 Example
 
 	$ xtheme init public/javascripts/ext-3.1.0 public/stylesheets
