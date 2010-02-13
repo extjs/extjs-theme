@@ -43,24 +43,6 @@ module ExtJS
         FileUtils.cp_r("#{ext_dir}/resources/images/default", "#{theme_path}/images")
       end
 
-      ##
-      # performs hsv transformation on Ext theme images and save to Sass theme dir.
-      # @param {String} name Theme name
-      # @param {String} ext_dir path to Ext directory relative to public/javascripts
-      # @param {Float} hue
-      # @param {Float} saturation
-      # @param {Float} lightneess
-      #
-      def self.hsv_transform(name, ext_dir, theme_dir, hue=1.0, saturation=1.0, lightness=1.0)    
-        theme_path = "#{theme_dir}/#{name}"
-        
-        each_image(ext_path) {|img|
-          write_image(img.modulate(lightness, saturation, hue), theme_path(name))
-        }
-        # update hue in defines.sass
-        defines = File.read("#{theme_path}/defines.sass")
-        File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/hue\s?=.*/, "hue = #{(hue-1)*180}") }
-      end
 
     private
 
