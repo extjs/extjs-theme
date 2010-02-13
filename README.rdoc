@@ -34,6 +34,14 @@ or in an <code>erb</code> template:
 
 	<%= stylesheet_link_tag "my-theme/init"
 
+The generator also creates a copy of all the Ext theme images in <code>my-theme/images</code>
+
+Another important sass file create is <code>my-theme/defines.sass</code>.  This file contains Sass variable declarations added to each Ext sass file.
+
+	!img_path = ../sass/my-theme/images
+	!font = tahoma,arial,verdana,sans-serif
+	!hue = -90.0
+	
 Form more on Haml and Sass, consult the HAML documentation[http://haml-lang.com/] to learn about including Sass[http://sass-lang.com/] stylesheets.
 
 == Effects
