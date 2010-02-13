@@ -4,8 +4,8 @@ require 'rubygems'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 
-require 'extjs-xtheme'
-require 'extjs-xtheme/command'
+require 'extjs-theme'
+require 'extjs-theme/command'
 
 args = ARGV.dup
 ARGV.clear
