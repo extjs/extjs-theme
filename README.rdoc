@@ -44,7 +44,7 @@ Currently, the only effect available is <code>effects:modulate</code>, for modif
 
 	$ xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
 	
-The parameters _hue_, _saturation_ and _lightness_ are defined as {"Float numbers. For example, 0.25 means "25%". All three arguments may be omitted. The default value of each argument is 1.0, that is, 100%"}[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]
+The parameters _hue_, _saturation_ and _lightness_ are defined as {"Float numbers, for example, 0.25 means "25%". All three arguments may be omitted. The default value of each argument is 1.0, that is, 100%"}[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]
 	
 Based upon the default blue Ext theme, the following will generate a pink theme:
 
