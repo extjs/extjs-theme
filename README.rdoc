@@ -48,7 +48,7 @@ Form more on Haml and Sass, consult the HAML documentation[http://haml-lang.com/
 
 The Gem includes commands for theme colorization, including image-processing through RMagick.
 
-Currently, the only effect available is <code>effects:modulate</code>, for modifying the _hue_, _saturation_ and _lightness of a theme according to RMagick[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]:
+Currently, the only effect available is <code>effects:modulate</code>, for modifying the _hue_, _saturation_ and _lightness_ of a theme according to RMagick[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]:
 
 	$ xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
 	
