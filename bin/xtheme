@@ -11,4 +11,4 @@ args = ARGV.dup
 ARGV.clear
 command = args.shift.strip rescue 'help'
 
-ExtJS::XTheme::Command.run(command, args)
+ExtJS::Theme::Command.run(command, args)

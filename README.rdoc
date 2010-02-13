@@ -13,8 +13,8 @@ In the root of your Rails app, first execute the following in your console:
 This creates a YAML config file named .xthemeconfig in the application root.
 
 	--- 
-	:theme_dir: public/stylesheets/sass
-	:ext_dir: public/javascripts/ext-3.1.0
+	theme_dir: public/stylesheets/sass
+	ext_dir: public/javascripts/ext-3.1.0
 
 Example
 
