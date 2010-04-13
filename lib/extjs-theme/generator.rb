@@ -35,8 +35,8 @@ module ExtJS
         end
 
         # Create master sass file, which includes @imports for all other files in theme.
-        puts " - Writing init.sass"
-        f = File.new("#{theme_path}/init.sass", "w")
+        puts " - Writing all.sass"
+        f = File.new("#{theme_path}/all.sass", "w")
         f.puts sass_files.join("\n")
 
         # Copy Ext theme images to new Sass theme dir.
