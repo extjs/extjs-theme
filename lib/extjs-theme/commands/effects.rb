@@ -1,5 +1,3 @@
-require 'launchy'
-
 module ExtJS::Theme::Command
   class Effects < Base
 
