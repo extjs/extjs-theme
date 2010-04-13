@@ -27,9 +27,9 @@ module ExtJS
           Dir["#{ext_css_path}/#{subdir}/*.css"].each do |file|
             m = /^.*\/(.*)\.css$/.match(file)
             sass_file = "#{theme_path}/#{subdir}/#{m.captures[0]}.sass"
-            puts " - css2sass #{m.captures[0]}.css -> #{sass_file}"
+            puts " - sass-convert #{m.captures[0]}.css -> #{sass_file}"
             sass_files << "@import #{subdir}/#{m.captures[0]}.sass"
-            `css2sass #{file} #{sass_file}`
+            `sass-convert #{file} #{sass_file}`
             write_sass_vars(sass_file)
           end
         end
