@@ -63,17 +63,17 @@ module ExtJS::Theme::Command
 
       self.class.groups.inject(StringIO.new) do |output, group|
         output.puts "=== %s" % group.title
-        output.puts
+        output.puts ''
 
         group.each do |command, description|
           if command.empty?
-            output.puts
+            output.puts ''
           else
             output.puts "%-*s # %s" % [longest_command_length, command, description]
           end
         end
 
-        output.puts
+        output.puts ''
         output
       end.string
     end
