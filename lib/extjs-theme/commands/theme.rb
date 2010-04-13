@@ -1,3 +1,5 @@
+require 'yaml'
+
 module ExtJS::Theme::Command
   class Theme < Base
 
