@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.executables = ["xtheme"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README",
      "README.rdoc"
   ]
   s.files = [
