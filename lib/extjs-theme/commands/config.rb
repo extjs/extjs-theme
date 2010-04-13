@@ -27,7 +27,7 @@ module ExtJS::Theme::Command
     end
 
     def remove
-      display "Removing #{args.first} and restarting app...", false
+      display "Removing #{args.first} and restarting app..."
       #heroku.remove_config_var(app, args.first)
       display "done."
     end
@@ -35,7 +35,7 @@ module ExtJS::Theme::Command
     alias :rm :remove
 
     def clear
-      display "Clearing all config vars and restarting app...", false
+      display "Clearing all config vars and restarting app..."
       #heroku.clear_config_vars(app)
       display "done."
     end
