@@ -8,13 +8,21 @@ This Gem depends upon RMagick[http://gemcutter.org/gems/rmagick] and haml-edge[h
 
 The Gem is hosted at Gemcutter[http://gemcutter.com].  Install the gem with:
 
-	sudo gem install extjs-theme
+	gem install extjs-theme
+
+or add
+
+	gem 'extjs-theme'
+	
+to you Gemfile and execute
+
+	$ bundle install
 
 == Usage
 
 In the root of your Rails app, first execute the following in your console:
 
-	$ xtheme init
+	$ bundle exec xtheme init
 
 This creates a YAML config file named config/xtheme.yml in the application root.
 
@@ -24,17 +32,17 @@ This creates a YAML config file named config/xtheme.yml in the application root.
 
 or generate a custom configuration file by execute the following in your console:
 
-	$ xtheme init <path/to/ext> <path/to/stylesheets>
+	$ bundle exec xtheme init <path/to/ext> <path/to/stylesheets>
 
 Every subsequent xtheme command will act up those directories.  If you download a new version of Ext, simply re-execute <code>xtheme init</code> with the new path
 
 Example
 
-	$ xtheme init public/javascripts/ext-3.3.0
+	$ bundle exec xtheme init public/javascripts/ext-3.3.0
 
 To generate a new Sass theme:
 
-	$ xtheme create my-theme
+	$ bundle exec xtheme create my-theme
 
 In Rails, this will have created a new directory <code>public/stylesheets/sass/my-theme</code>
 
@@ -62,17 +70,17 @@ The Gem includes commands for theme colorization, including image-processing thr
 
 Currently, the only effect available is <code>effects:modulate</code>, for modifying the _hue_, _saturation_ and _lightness_ of a theme according to RMagick[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]:
 
-	$ xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
+	$ bundle exec xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
 
 The parameters _hue_, _saturation_ and _lightness_ are defined as {"Float numbers, for example, 0.25 means "25%". All three arguments may be omitted. The default value of each argument is 1.0, that is, 100%"}[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]
 
 Based upon the default blue Ext theme, the following will generate a pink theme:
 
-	$ xtheme effects:modulate my-theme 0.5 1.0 1.0
+	$ bundle exec xtheme effects:modulate my-theme 0.5 1.0 1.0
 
 A green theme:
 
-	$ xtheme effects:modulate my-theme 1.5 1.0 1.0
+	$ bundle exec xtheme effects:modulate my-theme 1.5 1.0 1.0
 
 *Only hue works currently, saturation and lightness are under development*
 
