@@ -13,9 +13,9 @@ module ExtJS::Theme::Command
       end
 
       #vars = args.inject({}) do |vars, arg|
-      #	key, value = arg.split('=', 2)
-      #	vars[key] = value
-      #	vars
+      #  key, value = arg.split('=', 2)
+      #  vars[key] = value
+      #  vars
       #end
 
       display "Adding config vars:"
