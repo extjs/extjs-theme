@@ -20,7 +20,7 @@ module ExtJS::Theme
 
     private
 
-      ##
+    ##
     # Iterate all theme images
     # @param {String} path
     #
