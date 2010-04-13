@@ -16,9 +16,9 @@ module ExtJS::Theme::Command
         return display "Error: invalid path/to/stylesheets #{args[1]}"
       end
 
-      display "Initializing xtheme configuration file .xthemeconfig"
+      display "Initializing xtheme configuration file config/xtheme.yml"
 
-      File.open(".xthemeconfig", "w+") {|f|
+      File.open("config/xtheme.yml", "w+") {|f|
         f << {
                 :ext_dir => args[0],
                 :theme_dir => "#{args[1]}/sass"

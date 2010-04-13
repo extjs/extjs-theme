@@ -37,7 +37,7 @@ module ExtJS::Theme
 
         unless method == "init"
           unless config
-            raise ConfigNotFound.new("Could not locate config file .xthemeconfig.\nAre you in your application root?  Have you run xtheme init?")
+            raise ConfigNotFound.new("Could not locate config file config/xtheme.yml.\nAre you in your application root?  Have you run xtheme init?")
           end
           unless config && File.exists?(config[:ext_dir])
             raise InvalidConfig.new("Could not locate ext_dir #{config[:ext_dir]}.\nAre you in your application root?")
@@ -78,7 +78,8 @@ module ExtJS::Theme
       end
 
       def load_config
-        File.exists?('.xthemeconfig') ? YAML::load(File.open('.xthemeconfig')) : nil
+        File.move('.xthemeconfig', 'config/xtheme.yml') if File.exists?('.xthemeconfig')
+        File.exists?('config/xtheme.yml') ? YAML::load(File.open('config/xtheme.yml')) : nil
       end
     end
   end
