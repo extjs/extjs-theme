@@ -38,7 +38,7 @@ To generate a new Sass theme:
 
 In Rails, this will have created a new directory <code>public/stylesheets/sass/my-theme</code>
 
-The generator creates a main include file called <code>my-theme/all.sass</code> which contains <code>@include</code> directives for each individual Ext stylesheet.  You *no longer need* to include the ext-all.css file from the Ext library -- <code>my-theme/init.sass</code> contains all it needs.  In a Rails view, you would include this file in the standard Haml/Sass[http://sass-lang.com/] manner.
+The generator creates a main include file called <code>my-theme/all.sass</code> which contains <code>@include</code> directives for each individual Ext stylesheet.  You *no longer need* to include the ext-all.css file from the Ext library -- <code>my-theme/all.sass</code> contains all it needs.  In a Rails view, you would include this file in the standard Haml/Sass[http://sass-lang.com/] manner.
 
 	=stylesheet_link_tag "my-theme/init"
 
