@@ -9,14 +9,15 @@ module ExtJS::Theme::Command
       theme_path = args[1] || 'app/stylesheets/themes'
 
       unless File.directory?(ext_path)
-        return display "Error: invalid path/to/ext #{ext_path}"
+        return display "Error: invalid ext js path: #{ext_path}"
       end
+
       unless File.directory?(theme_path)
-        return display "Error: invalid path/to/stylesheets #{theme_path}"
+        FileUtils.mkdir_p(theme_path)
+        display "Create theme directory #{theme_path}"
       end
 
       display "Initializing xtheme configuration file config/xtheme.yml"
-
       File.open("config/xtheme.yml", "w+") {|f|
         f << {
                 :ext_dir => ext_path,
