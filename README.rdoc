@@ -14,19 +14,23 @@ The Gem is hosted at Gemcutter[http://gemcutter.com].  Install the gem with:
 
 In the root of your Rails app, first execute the following in your console:
 
-	$ xtheme init <path/to/ext> <path/to/stylesheets>
+	$ xtheme init
 
 This creates a YAML config file named config/xtheme.yml in the application root.
 
 	---
-	theme_dir: public/stylesheets/sass
-	ext_dir: public/javascripts/ext-3.1.0
+	theme_dir: app/stylesheets/themes
+	ext_dir: public/javascripts/ext-3.2.0
+
+or generate a custom configuration file by execute the following in your console:
+
+	$ xtheme init <path/to/ext> <path/to/stylesheets>
 
 Every subsequent xtheme command will act up those directories.  If you download a new version of Ext, simply re-execute <code>xtheme init</code> with the new path
 
 Example
 
-	$ xtheme init public/javascripts/ext-3.1.0 public/stylesheets
+	$ xtheme init public/javascripts/ext-3.3.0
 
 To generate a new Sass theme:
 
@@ -46,7 +50,7 @@ The generator also creates a copy of all the Ext theme images in <code>my-theme/
 
 Another important sass file created is <code>my-theme/defines.sass</code>.  This file contains Sass variable declarations added to each Ext sass file.
 
-	!img_path = ../sass/my-theme/images
+	!img_path = ../themes/my-theme/images
 	!font = tahoma,arial,verdana,sans-serif
 	!hue = -90.0
 

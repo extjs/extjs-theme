@@ -17,7 +17,7 @@ module ExtJS
         # Create the defines.sass file, set img_path variable.
         FileUtils.copy("#{File.dirname(__FILE__)}/template/defines.sass", "#{theme_path}/defines.sass")
         defines = File.read("#{theme_path}/defines.sass")
-        File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/\{\{img_path\}\}/, "../sass/#{name}/images") }
+        File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/\{\{img_path\}\}/, "../themes/#{name}/images") }
         puts " - created #{theme_path}/defines.sass"
 
         sass_files = []

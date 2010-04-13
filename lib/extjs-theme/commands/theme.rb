@@ -5,25 +5,22 @@ module ExtJS::Theme::Command
 
     def init
 
-      unless args.length == 2
-        display "Usage: xtheme init <path/to/ext> <path/to/stylesheets>"
-        display " - Eg: xtheme init public/javascripts/ext-3.1.0 public/stylesheets"
-        return
-      end
+      ext_path = args[0] || 'public/javascripts/ext-3.2.0'
+      theme_path = args[1] || 'app/stylesheets/themes'
 
-      unless File.directory?(args[0])
-        return display "Error: invalid path/to/ext #{args[0]}"
+      unless File.directory?(ext_path)
+        return display "Error: invalid path/to/ext #{ext_path}"
       end
-      unless File.directory?(args[1])
-        return display "Error: invalid path/to/stylesheets #{args[1]}"
+      unless File.directory?(theme_path)
+        return display "Error: invalid path/to/stylesheets #{theme_path}"
       end
 
       display "Initializing xtheme configuration file config/xtheme.yml"
 
       File.open("config/xtheme.yml", "w+") {|f|
         f << {
-                :ext_dir => args[0],
-                :theme_dir => "#{args[1]}/sass"
+                :ext_dir => ext_path,
+                :theme_dir => theme_path
         }.to_yaml
       }
     end
