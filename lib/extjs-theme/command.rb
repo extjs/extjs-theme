@@ -1,3 +1,4 @@
+require 'yaml'
 require 'commands/base'
 
 Dir["#{File.dirname(__FILE__)}/commands/*"].each { |c| require c }
