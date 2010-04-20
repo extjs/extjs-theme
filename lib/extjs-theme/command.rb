@@ -79,7 +79,7 @@ module ExtJS::Theme
       end
 
       def load_config
-        File.move('.xthemeconfig', 'config/xtheme.yml') if File.exists?('.xthemeconfig')
+        FileUtils.mv('.xthemeconfig', 'config/xtheme.yml') if File.exists?('.xthemeconfig')
         File.exists?('config/xtheme.yml') ? YAML::load(File.open('config/xtheme.yml')) : nil
       end
     end
