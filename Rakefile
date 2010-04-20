@@ -10,7 +10,7 @@ begin
     gem.email = "christocracy@gmail.com"
     gem.homepage = "http://github.com/extjs/extjs-theme"
     gem.authors = ["Christopher Scott"]
-    gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_development_dependency "shoulda"
     gem.add_dependency "rmagick"
     gem.add_dependency "haml", ">= 3.0.0.beta"
     gem.files = %w(Rakefile) +
