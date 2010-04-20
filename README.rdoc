@@ -5,36 +5,48 @@ Generates a Sass version of Ext theme.  Includes methods for colorizing images.
 This Gem depends upon RMagick[http://gemcutter.org/gems/rmagick] and haml-edge[http://gemcutter.org/gems/haml-edge]
 
 == Installation
-	
+
 The Gem is hosted at Gemcutter[http://gemcutter.com].  Install the gem with:
+
+	gem install extjs-theme
+
+or add
+
+	gem 'extjs-theme'
 	
-	sudo gem install extjs-theme
-	
+to you Gemfile and execute
+
+	$ bundle install
+
 == Usage
 
 In the root of your Rails app, first execute the following in your console:
 
-	$ xtheme init <path/to/ext> <path/to/stylesheets>
+	$ bundle exec xtheme init
 
-This creates a YAML config file named .xthemeconfig in the application root.
+This creates a YAML config file named config/xtheme.yml in the application root.
 
-	--- 
-	theme_dir: public/stylesheets/sass
-	ext_dir: public/javascripts/ext-3.1.0
+	---
+	theme_dir: app/stylesheets/themes
+	ext_dir: public/javascripts/ext-3.2.0
 
-Every subsequent xtheme command will act up those directories.  If you download a new version of Ext, simply re-execute <code>xtheme init</code> with the new path (TODO: store in Rails <code>/config</code> dir)
+or generate a custom configuration file by execute the following in your console:
+
+	$ bundle exec xtheme init <path/to/ext> <path/to/stylesheets>
+
+Every subsequent xtheme command will act up those directories.  If you download a new version of Ext, simply re-execute <code>xtheme init</code> with the new path
 
 Example
 
-	$ xtheme init public/javascripts/ext-3.1.0 public/stylesheets
+	$ bundle exec xtheme init public/javascripts/ext-3.3.0
 
 To generate a new Sass theme:
 
-	$ xtheme create my-theme
+	$ bundle exec xtheme create my-theme
 
 In Rails, this will have created a new directory <code>public/stylesheets/sass/my-theme</code>
-	
-The generator creates a main include file called <code>my-theme/init.sass</code> (TODO: change to <code>my-theme/all.sass</code>) which contains <code>@include</code> directives for each individual Ext stylesheet.  You *no longer need* to include the ext-all.css file from the Ext library -- <code>my-theme/init.sass</code> contains all it needs.  In a Rails view, you would include this file in the standard Haml/Sass[http://sass-lang.com/] manner.
+
+The generator creates a main include file called <code>my-theme/all.sass</code> which contains <code>@include</code> directives for each individual Ext stylesheet.  You *no longer need* to include the ext-all.css file from the Ext library -- <code>my-theme/all.sass</code> contains all it needs.  In a Rails view, you would include this file in the standard Haml/Sass[http://sass-lang.com/] manner.
 
 	=stylesheet_link_tag "my-theme/init"
 
@@ -46,10 +58,10 @@ The generator also creates a copy of all the Ext theme images in <code>my-theme/
 
 Another important sass file created is <code>my-theme/defines.sass</code>.  This file contains Sass variable declarations added to each Ext sass file.
 
-	!img_path = ../sass/my-theme/images
+	!img_path = ../themes/my-theme/images
 	!font = tahoma,arial,verdana,sans-serif
 	!hue = -90.0
-	
+
 Form more on Haml and Sass, consult the HAML documentation[http://haml-lang.com/] to learn about including Sass[http://sass-lang.com/] stylesheets.
 
 == Effects
@@ -58,17 +70,17 @@ The Gem includes commands for theme colorization, including image-processing thr
 
 Currently, the only effect available is <code>effects:modulate</code>, for modifying the _hue_, _saturation_ and _lightness_ of a theme according to RMagick[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]:
 
-	$ xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
-	
+	$ bundle exec xtheme effects:modulate <theme-name> <hue> <saturation> <lightness>
+
 The parameters _hue_, _saturation_ and _lightness_ are defined as {"Float numbers, for example, 0.25 means "25%". All three arguments may be omitted. The default value of each argument is 1.0, that is, 100%"}[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]
-	
+
 Based upon the default blue Ext theme, the following will generate a pink theme:
 
-	$ xtheme effects:modulate my-theme 0.5 1.0 1.0
+	$ bundle exec xtheme effects:modulate my-theme 0.5 1.0 1.0
 
 A green theme:
 
-	$ xtheme effects:modulate my-theme 1.5 1.0 1.0
+	$ bundle exec xtheme effects:modulate my-theme 1.5 1.0 1.0
 
 *Only hue works currently, saturation and lightness are under development*
 

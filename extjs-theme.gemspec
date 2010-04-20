@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.executables = ["xtheme"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README",
      "README.rdoc"
   ]
   s.files = [
@@ -25,7 +24,7 @@ Gem::Specification.new do |s|
      "lib/extjs-theme.rb",
      "lib/extjs-theme/command.rb",
      "lib/extjs-theme/commands/base.rb",
-     "lib/extjs-theme/commands/conifg.rb",
+     "lib/extjs-theme/commands/config.rb",
      "lib/extjs-theme/commands/effects.rb",
      "lib/extjs-theme/commands/help.rb",
      "lib/extjs-theme/commands/theme.rb",

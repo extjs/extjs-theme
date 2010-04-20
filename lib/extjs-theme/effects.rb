@@ -1,13 +1,13 @@
 module ExtJS::Theme
   module Effects
-    
+
     ##
     # performs hsv transformation on Ext theme images and save to Sass theme dir.
     # @param {String} name Theme name
     # @param {String} ext_dir path to Ext directory relative to public/javascripts
     # @param {Float} hue
     # @param {Float} saturation
-    # @param {Float} lightneess
+    # @param {Float} lightness
     #
     def self.modulate(ext_dir, theme_dir, hue=1.0, saturation=1.0, lightness=1.0)
       each_image("#{ext_dir}/resources/images/default") {|img|
@@ -17,10 +17,10 @@ module ExtJS::Theme
       defines = File.read("#{theme_dir}/defines.sass")
       File.open("#{theme_dir}/defines.sass", "w+") {|f| f << defines.gsub(/hue\s?=.*/, "hue = #{(hue-1)*180}") }
     end
-    
+
     private
 
-      ##
+    ##
     # Iterate all theme images
     # @param {String} path
     #

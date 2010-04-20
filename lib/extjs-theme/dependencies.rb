@@ -8,7 +8,7 @@ end
 begin
   gem 'rmagick'
   $stderr.puts "Loading rmagick gem."
-  
+
 rescue LoadError
   #pass
 end

@@ -10,14 +10,14 @@ module ExtJS
       def self.create(name, ext_dir, theme_dir)
         ext_css_path  = "#{ext_dir}/resources/css"
         theme_path    = "#{theme_dir}/#{name}"
-        
+
         # Create theme directory in /stylesheets/sass
         FileUtils.mkdir_p ["#{theme_path}/visual", "#{theme_path}/structure"]
 
-        # Create the defines.sass file, set img_path variable.          
-        FileUtils.copy("#{File.dirname(__FILE__)}/template/defines.sass", "#{theme_path}/defines.sass")  
+        # Create the defines.sass file, set img_path variable.
+        FileUtils.copy("#{File.dirname(__FILE__)}/template/defines.sass", "#{theme_path}/defines.sass")
         defines = File.read("#{theme_path}/defines.sass")
-        File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/\{\{img_path\}\}/, "../sass/#{name}/images") }
+        File.open("#{theme_path}/defines.sass", "w+") {|f| f << defines.gsub(/\{\{img_path\}\}/, "../themes/#{name}/images") }
         puts " - created #{theme_path}/defines.sass"
 
         sass_files = []
@@ -27,16 +27,16 @@ module ExtJS
           Dir["#{ext_css_path}/#{subdir}/*.css"].each do |file|
             m = /^.*\/(.*)\.css$/.match(file)
             sass_file = "#{theme_path}/#{subdir}/#{m.captures[0]}.sass"
-            puts " - css2sass #{m.captures[0]}.css -> #{sass_file}"
+            puts " - sass-convert #{m.captures[0]}.css -> #{sass_file}"
             sass_files << "@import #{subdir}/#{m.captures[0]}.sass"
-            `css2sass #{file} #{sass_file}`
+            `sass-convert #{file} #{sass_file}`
             write_sass_vars(sass_file)
           end
         end
 
         # Create master sass file, which includes @imports for all other files in theme.
-        puts " - Writing init.sass"
-        f = File.new("#{theme_path}/init.sass", "w")
+        puts " - Writing all.sass"
+        f = File.new("#{theme_path}/all.sass", "w")
         f.puts sass_files.join("\n")
 
         # Copy Ext theme images to new Sass theme dir.
@@ -44,7 +44,7 @@ module ExtJS
       end
 
 
-    private
+      private
 
       ##
       # Iterate all theme images
