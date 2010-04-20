@@ -12,7 +12,7 @@ begin
     gem.authors = ["Christopher Scott"]
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_dependency "rmagick"
-    gem.add_dependency "haml-edge", ">=2.3"
+    gem.add_dependency "haml", ">= 3.0.0.beta.1"
     gem.files = %w(Rakefile) +
   		Dir.glob("{bin,lib,test}/**/*")
   		
