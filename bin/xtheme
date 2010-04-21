@@ -5,10 +5,20 @@ require 'rubygems'
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
 
 require 'extjs-theme'
-require 'extjs-theme/command'
+require 'extjs-theme/cli'
 
-args = ARGV.dup
-ARGV.clear
-command = args.shift.strip rescue 'help'
+begin
+  ExtJS::Theme::CLI.start(ARGV, {})
+rescue ExtJS::Theme::Error => e
+  puts e.message
+  exit e.status_code
+end
 
-ExtJS::Theme::Command.run(command, args)
+# GET RID OF THIS ONCE Thor is in place
+#require 'extjs-theme/command'
+
+#args = ARGV.dup
+#ARGV.clear
+#command = args.shift.strip rescue 'help'
+
+#ExtJS::Theme::Command.run(command, args)

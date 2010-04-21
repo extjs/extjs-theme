@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Christopher Scott"]
-  s.date = %q{2010-04-20}
+  s.date = %q{2010-04-21}
   s.default_executable = %q{xtheme}
   s.description = %q{Generates Sass-based Ext themes.  Includes methods for colorizing themes.}
   s.email = %q{christocracy@gmail.com}
@@ -22,15 +22,7 @@ Gem::Specification.new do |s|
     "Rakefile",
      "bin/xtheme",
      "lib/extjs-theme.rb",
-     "lib/extjs-theme/command.rb",
-     "lib/extjs-theme/commands/base.rb",
-     "lib/extjs-theme/commands/config.rb",
-     "lib/extjs-theme/commands/effects.rb",
-     "lib/extjs-theme/commands/help.rb",
-     "lib/extjs-theme/commands/theme.rb",
-     "lib/extjs-theme/dependencies.rb",
-     "lib/extjs-theme/effects.rb",
-     "lib/extjs-theme/generator.rb",
+     "lib/extjs-theme/cli.rb",
      "lib/extjs-theme/template/defines.sass",
      "test/config/xtheme.yml",
      "test/extjs-xtheme_test.rb",

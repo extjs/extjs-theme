@@ -34,7 +34,7 @@ class ThemeTest < Test::Unit::TestCase
       FileUtils.rm(an_image)
       
       # run the effect, it should create a newly modulated version of image (it should be green but how to tell?).
-      `xtheme effects:modulate foo 1.5 1.0 1.0`
+      `xtheme modulate foo 1.5 1.0 1.0`
       
       assert File.exists?(an_image), "Failed to modulate images"
     end
