@@ -74,11 +74,11 @@ Currently, the only effect available is <code>modulate</code>, for modifying the
 
 The parameters _hue_, _saturation_ and _lightness_ are defined as {"Float numbers, for example, 0.25 means "25%". The median value of each argument is 1.0, that is, 100%"}[http://www.imagemagick.org/RMagick/doc/image2.html#modulate]
 
-Based upon the default blue Ext theme, the following will generate a <strong>pink</strong> theme:
+Based upon the default blue Ext theme, the following will generate a pink theme:
 
 	$ bundle exec xtheme modulate my-theme 0.5 1.0 1.0
 
-A <strong>green</strong> theme:
+A green theme:
 
 	$ bundle exec xtheme modulate my-theme 1.5 1.0 1.0
 
